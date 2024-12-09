@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Charlie.Customer.RMQ.Sub": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json"
+}
