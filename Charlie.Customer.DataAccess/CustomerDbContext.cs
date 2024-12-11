@@ -15,19 +15,8 @@ namespace Charlie.Customer.DataAccess
         public DbSet<Customer> Customer{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Example: Configure relationships or constraints
 
             modelBuilder.Entity<Customer>();
-
-            //modelBuilder.Entity<OrderItem>()
-            //    .HasOne(oi => oi.Order)
-            //    .WithMany(o => o.OrderItems)
-            //    .HasForeignKey(oi => oi.OrderId);
-
-            //modelBuilder.Entity<OrderItem>()
-            //    .HasOne(oi => oi.Product)
-            //    .WithMany()
-            //    .HasForeignKey(oi => oi.ProductId);
 
             base.OnModelCreating(modelBuilder);
         }

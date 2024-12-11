@@ -1,4 +1,4 @@
-using Charlie.Customer.RMQ.Sub;
+using Charlie.Customer.RMQ;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddHostedService<Worker>();
