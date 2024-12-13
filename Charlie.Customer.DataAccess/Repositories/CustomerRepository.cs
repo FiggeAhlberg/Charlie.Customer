@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Charlie.Customer.Shared.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Charlie.Customer.DataAccess.Repositories
 {
-    public class CustomerRepository : ICustomerRepository<Customer>
+	public class CustomerRepository : ICustomerRepository<CustomerModel>
     {
         private readonly CustomerDbContext _context;
 
@@ -11,18 +12,18 @@ namespace Charlie.Customer.DataAccess.Repositories
             _context = context;
         }
 
-		public async Task AddAsync(Customer item)
+		public async Task AddAsync(CustomerModel item)
 		{
 			_context.Customer.AddAsync(item);
 			await _context.SaveChangesAsync();
 		}
 
-		public async Task<IEnumerable<Customer>> GetAllAsync()
+		public async Task<IEnumerable<CustomerModel>> GetAllAsync()
 		{
 			return await _context.Customer.ToListAsync();
 		}
 
-		public async Task<Customer> GetByIdAsync(int id)
+		public async Task<CustomerModel> GetByIdAsync(int id)
 		{
 			return await _context.Customer.FindAsync(id);
 		}
@@ -34,7 +35,7 @@ namespace Charlie.Customer.DataAccess.Repositories
 			await _context.SaveChangesAsync();
 		}
 
-		public async Task UpdateAsync(Customer item)
+		public async Task UpdateAsync(CustomerModel item)
 		{
 			 _context.Customer.Update(item);
 			await _context.SaveChangesAsync();
